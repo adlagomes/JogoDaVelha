@@ -15,7 +15,7 @@ Pretendo acrescentar a ele algumas funções como a escolha da peça, se o usuá
 
 ## ~ Layout <a name="-layout"></a>
 
-https://www.figma.com/file/3zaYUGCaSwTNRQoMHv2Dqk/JogoDaVelha?node-id=0%3A1
+[Clique aqui para visualizar!](https://www.figma.com/file/3zaYUGCaSwTNRQoMHv2Dqk/JogoDaVelha?node-id=0%3A1)
 
 ## :memo: Licença <a name="memo-licença"></a>
 
