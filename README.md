@@ -1,11 +1,4 @@
- <h1 align="center">Jogo da Velha</h1>
-
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
+<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout.png">
 
 ## ~ Tecnologias <a name="-tecnologias"></a>
 
@@ -22,7 +15,7 @@ Pretendo acrescentar a ele algumas funções como a escolha da peça, se o usuá
 
 ## ~ Layout <a name="-layout"></a>
 
-<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout.png">
+https://www.figma.com/file/3zaYUGCaSwTNRQoMHv2Dqk/JogoDaVelha?node-id=0%3A1
 
 ## :memo: Licença <a name="memo-licença"></a>
 
