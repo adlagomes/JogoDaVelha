@@ -1,11 +1,4 @@
- <h1 align="center">Jogo da Velha</h1>
-
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
+<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout.png">
 
 ## ~ Tecnologias <a name="-tecnologias"></a>
 
@@ -18,11 +11,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## ~ Projeto <a name="-projeto"></a>
 
 Esse jogo da velha tem como objetivo me ajudar a adquirir experiência com lógica de programação e desenvolvimento front-end. Além de me ajudar com o estudo das linguagens utilizadas ele também me proporcionará experiência em pesquisa para o desenvolvimento do mesmo.
-Pretendo acrescentar a ele algumas funções como a escolha da peça, se o usuário quer jogar com X ou com O, o botão para iniciar a jogada e a amostragem da pontuação. Pensei em guardar numa memória local informações sobre total de partidas jogadas, ganhas, empatadas e perdidas. Além disso o compuatador deve ter uma "inteligência" mais ou menos alta para que o jogo não fique tão fácil, mas que também não fique tão difícil para vencer.
+Pretendo acrescentar a ele algumas funções como reiniciar a partida resetando o tabuleiro, marcar pontuação dos jogadores, um mostrador para identificar quem começa a rodada e de quem é o turno da vez. Futuramente pretendo inplementar um banco de dados local para guardar informações sobre total de partidas jogadas, ganhas, empatadas e perdidas, e também uma opçao para o cliente escolher com qual peça ele quer jogar. Além disso pretendo aplicar uma opçao para jogar contra outro jogador ou contra o computador, tendo este último três níveis de dificuldade.
 
 ## ~ Layout <a name="-layout"></a>
 
-<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout.png">
+[Clique aqui para visualizar!](https://www.figma.com/file/3zaYUGCaSwTNRQoMHv2Dqk/JogoDaVelha?node-id=0%3A1)
 
 ## :memo: Licença <a name="memo-licença"></a>
 
