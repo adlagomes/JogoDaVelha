@@ -1,4 +1,4 @@
-<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout.png">
+<img src="https://github.com/adlagomes/JogoDaVelha/blob/main/layout-jdv.png">
 
 ## ~ Tecnologias <a name="-tecnologias"></a>
 
