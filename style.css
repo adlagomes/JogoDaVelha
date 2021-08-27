@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow: hidden;
+    width: min(59rem, 90%);
+    display: flex;
+    margin: 0 auto;
+    width: 100vw;
+    background: #E0E0E0;
+    margin-left: 17%;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+h1 {
+    width: 63.9rem;
+    height: 5.7rem;
+    font-family: 'Righteous', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.7rem;
+    color: #333333;
+    text-align: center;
+}
+.tabuleiro {
+    width: 63.9rem;
+}
+.slot{
+    width: 21.1rem;
+    height: 21.1rem;
+    background: none;
+    float: left;
+    text-align: center;
+    padding-top: 6.5rem;
+    cursor: pointer;
+    border: .2rem solid #333333;
+}
+.tabuleiro #slot1 {
+    border-right: .2rem solid black;
+    border-bottom: .2rem solid black;
+}
+.tabuleiro #slot2 {
+    border-right: .2rem solid black;
+    border-bottom: .2rem solid black;
+}
+.tabuleiro #slot3 {
+    /* border-right: .2rem solid black; */
+    border-bottom: .2rem solid black;
+}
+.tabuleiro #slot4 {
+    /* border-right: .2rem solid black; */
+    border-bottom: .2rem solid black;
+}
+.tabuleiro #slot5 {
+    border: .2rem solid black;
+}
+.tabuleiro #slot6 {
+    /* border-right: .2rem solid black; */
+    border-bottom: .2rem solid black;
+}
+.tabuleiro #slot7 {
+    border-right: .2rem solid black;
+    /* border-bottom: .2rem solid black; */
+}
+.tabuleiro #slot8 {
+    border-right: .2rem solid black;
+    /* border-bottom: .2rem solid black; */
+}
+.tabuleiro #slot9 {
+    /* border-right: .2rem solid black; */
+    /* border-bottom: .2rem solid black; */
+}
