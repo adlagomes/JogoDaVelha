@@ -8,7 +8,7 @@ var turnoCpu = 1;
 var quemComeca = 1;
 var nivel = 1;
 
-function turnoJogador(p) {
+async function turnoJogador(p) {
     if((partidaIniciada) && (quemJoga == 0)){
         switch(p) {
             case 1:
@@ -70,8 +70,13 @@ function turnoJogador(p) {
             attTabuleiro()
             verifica = verificaVitoria()
             if(verifica != ""){
-                alert(verifica + " VENCEU!")
                 partidaIniciada = false
+                await sleep (50)
+                alert(verifica + " VENCEU!")
+            }
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms))
             }
             cpu()
         }
@@ -79,7 +84,7 @@ function turnoJogador(p) {
     }
 }
 
-function cpu() {
+async function cpu() {
     if(partidaIniciada == true){
         var l, c
         if(nivel == 1){
@@ -94,8 +99,13 @@ function cpu() {
 
         verifica = verificaVitoria()
         if(verifica != ""){
-            alert(verifica + " VENCEU!")
             partidaIniciada = false
+            await sleep (50)
+            alert(verifica + " VENCEU!")
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms))
         }
 
         attTabuleiro()
@@ -124,11 +134,10 @@ function verificaVitoria(){
         return jogo[2][0]
     }
     
-    return "" //empate
+        return ""
 
-    
-
-}
+   }
+ 
 
 function attTabuleiro() {
     for(var l = 0; l < 3; l++){
