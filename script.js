@@ -2,10 +2,11 @@ var jogador = "X";
 var jogo = []; // Array que irá guardar e verificar os posições jogadas
 var tabuleiro = [];; // Array que irá controlar/atualizar os elementos visuais
 var quemJoga = 0; // jogador = 0 e cpu = 1
-var verificarVitoria;
+var verifica;
 var partidaIniciada = true;
 var turnoCpu = 1;
 var quemComeca = 1;
+var nivel = 1;
 
 function turnoJogador(p) {
     if((partidaIniciada) && (quemJoga == 0)){
@@ -65,8 +66,68 @@ function turnoJogador(p) {
                 }
                 break;
         }
-        attTabuleiro();
+        if(quemJoga == 1){
+            attTabuleiro()
+            verifica = verificaVitoria()
+            if(verifica != ""){
+                alert(verifica + " VENCEU!")
+                partidaIniciada = false
+            }
+            cpu()
+        }
+        
     }
+}
+
+function cpu() {
+    if(partidaIniciada == true){
+        var l, c
+        if(nivel == 1){
+            do {
+                l = Math.round(Math.random()*2)
+                c = Math.round(Math.random()*2)
+            } while (jogo[l][c] != "")
+            jogo[l][c] = "O"
+        } else if(nivel == 2){
+            //NIVEL 2
+        }
+
+        verifica = verificaVitoria()
+        if(verifica != ""){
+            alert(verifica + " VENCEU!")
+            partidaIniciada = false
+        }
+
+        attTabuleiro()
+        quemJoga = 0
+    }
+}
+
+function verificaVitoria(){
+    var l, c
+    //LINHAS
+    for(l = 0; l < 3; l++){
+        if((jogo[l][0] == jogo[l][1]) && (jogo[l][1] == jogo[l][2])){
+            return jogo[l][0]
+        }
+    }
+    //COLUNAS
+    for(c = 0; c < 3; c++){
+        if((jogo[0][c] == jogo [1][c]) && (jogo[1][c] == jogo[2][c])){
+            return jogo[0][c]
+        }
+    }
+    //DIAGONAIS
+    if((jogo[0][0] == jogo [1][1]) && (jogo[1][1] == jogo[2][2])){
+        return jogo[0][0]
+    } else if ((jogo[2][0] == jogo [1][1]) && (jogo[1][1] == jogo[0][2])) {
+        return jogo[2][0]
+    }
+    
+    return "" //empate
+
+    
+
 }
 
 function attTabuleiro() {

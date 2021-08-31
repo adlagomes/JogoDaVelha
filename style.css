@@ -107,6 +107,7 @@ h1 {
     margin: 0;
     padding: 0;
     cursor: pointer;
+    align-content: center;
 }
 
 /* MONTANDO AS LINHAS DO TABULEIRO*/
