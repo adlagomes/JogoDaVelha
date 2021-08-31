@@ -126,8 +126,6 @@ function verificaVitoria(){
     
     return "" //empate
 
-    
-
 }
 
 function attTabuleiro() {
