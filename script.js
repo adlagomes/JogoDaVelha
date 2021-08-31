@@ -96,7 +96,7 @@ async function cpu() {
         } else if(nivel == 2){
             //NIVEL 2
         }
-
+        attTabuleiro()
         verifica = verificaVitoria()
         if(verifica != ""){
             partidaIniciada = false
@@ -107,8 +107,6 @@ async function cpu() {
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms))
         }
-
-        attTabuleiro()
         quemJoga = 0
     }
 }
@@ -169,5 +167,16 @@ function iniciar() {
         [document.getElementById("slot4"), document.getElementById("slot5"), document.getElementById("slot6") ],
         [document.getElementById("slot7"), document.getElementById("slot8"), document.getElementById("slot9") ]
     ];
+    attTabuleiro()
+    if(quemComeca == 1){
+        quemComeca = 0
+        quemJoga = quemComeca
+        document.getElementById("turno").innerHTML="Jogador"
+    } else {
+        quemComeca = 1
+        quemJoga = quemComeca
+        document.getElementById("turno").innerHTML="CPU"
+        cpu();
+    }
 }
-window.addEventListener("load", iniciar);
+window.addEventListener("load", iniciar)
