@@ -7,6 +7,8 @@ var turnoCpu = 1;
 var quemJoga = 0; // jogador = 0 e cpu = 1
 var quemComeca = 1;
 var nivel = 1;
+var ptsJogador = 0;
+var ptsCPU = 0;
 
 async function turnoJogador(p) {
     if((partidaIniciada) && (quemJoga == 0)){
@@ -136,7 +138,6 @@ function verificaVitoria(){
 
    }
  
-
 function attTabuleiro() {
     for(var l = 0; l < 3; l++){
         for(var c = 0; c < 3; c++){
