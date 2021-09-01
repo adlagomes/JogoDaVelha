@@ -6,9 +6,10 @@ var partidaIniciada = true;
 var turnoCpu = 1;
 var quemJoga = 0; // jogador = 0 e cpu = 1
 var quemComeca = 1;
-var nivel = 1;
+var nivel = 2;
 var ptsJogador = 0;
 var ptsCPU = 0;
+var jogada = 0;
 
 async function turnoJogador(p) {
     if((partidaIniciada) && (quemJoga == 0)){
@@ -75,11 +76,13 @@ async function turnoJogador(p) {
                 partidaIniciada = false
                 await sleep (50)
                 alert(verifica + " VENCEU!")
+                pontuacao()
             }
 
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms))
             }
+            jogada++;
             cpu();
         }
         
@@ -96,8 +99,133 @@ async function cpu() {
             } while (jogo[l][c] != "")
             jogo[l][c] = "O"
         } else if(nivel == 2){
-            //NIVEL 2
+            if(nivel == 2){
+                // ATAQUE LINHAS
+                if((jogo[0][0] == "O") && (jogo[0][1] == "O") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else if ((jogo[0][0] == "O") && (jogo[0][2] == "O") && (jogo[0][1] == "")){
+                    jogo[0][1] = "O"
+                } else if ((jogo[0][2] == "O") && (jogo[0][1] == "O") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[1][0] == "O") && (jogo[1][1] == "O") && (jogo[1][2] == "")){
+                    jogo[1][2] = "O"
+                } else if ((jogo[1][0] == "O") && (jogo[1][2] == "O") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][2] == "O") && (jogo[1][1] == "O") && (jogo[1][0] == "")){
+                    jogo[1][0] = "O"
+                } else if ((jogo[2][0] == "O") && (jogo[2][1] == "O") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[2][0] == "O") && (jogo[2][2] == "O") && (jogo[2][1] == "")){
+                    jogo[2][1] = "O"
+                } else if ((jogo[2][2] == "O") && (jogo[2][1] == "O") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else
+                // ATAQUE DIAGONAIS
+                if ((jogo[0][0] == "O") && (jogo[1][1] == "O") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[0][0] == "O") && (jogo[2][2] == "O") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "O") && (jogo[2][2] == "O") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[2][0] == "O") && (jogo[1][1] == "O") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else if ((jogo[2][0] == "O") && (jogo[0][2] == "O") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "O") && (jogo[0][2] == "O") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else
+                // ATAQUE COLUNAS
+                if ((jogo[0][0] == "O") && (jogo[1][0] == "O") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else if ((jogo[0][0] == "O") && (jogo[2][0] == "O") && (jogo[1][0] == "")){
+                    jogo[1][0] = "O"
+                } else if ((jogo[1][0] == "O") && (jogo[2][0] == "O") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[0][1] == "O") && (jogo[1][1] == "O") && (jogo[2][1] == "")){
+                    jogo[2][1] = "O"
+                } else if ((jogo[0][1] == "O") && (jogo[2][1] == "O") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "O") && (jogo[2][1] == "O") && (jogo[0][1] == "")){
+                    jogo[0][1] = "O"
+                } else if ((jogo[0][2] == "O") && (jogo[1][2] == "O") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[0][2] == "O") && (jogo[2][2] == "O") && (jogo[1][2] == "")){
+                    jogo[1][2] = "O"
+                } else if ((jogo[1][2] == "O") && (jogo[2][2] == "O") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else
+                // DEFESA LINHAS
+                if((jogo[0][0] == "X") && (jogo[0][1] == "X") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else if ((jogo[0][0] == "X") && (jogo[0][2] == "X") && (jogo[0][1] == "")){
+                    jogo[0][1] = "O"
+                } else if ((jogo[0][2] == "X") && (jogo[0][1] == "X") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[1][0] == "X") && (jogo[1][1] == "X") && (jogo[1][2] == "")){
+                    jogo[1][2] = "O"
+                } else if ((jogo[1][0] == "X") && (jogo[1][2] == "X") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][2] == "X") && (jogo[1][1] == "X") && (jogo[1][0] == "")){
+                    jogo[1][0] = "O"
+                } else if ((jogo[2][0] == "X") && (jogo[2][1] == "X") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[2][0] == "X") && (jogo[2][2] == "X") && (jogo[2][1] == "")){
+                    jogo[2][1] = "O"
+                } else if ((jogo[2][2] == "X") && (jogo[2][1] == "X") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else
+                // DEFESA DIAGONAIS
+                if ((jogo[0][0] == "X") && (jogo[1][1] == "X") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[0][0] == "X") && (jogo[2][2] == "X") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "X") && (jogo[2][2] == "X") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[2][0] == "X") && (jogo[1][1] == "X") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else if ((jogo[2][0] == "X") && (jogo[0][2] == "X") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "X") && (jogo[0][2] == "X") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else
+                // DEFESA COLUNAS
+                if ((jogo[0][0] == "X") && (jogo[1][0] == "X") && (jogo[2][0] == "")){
+                    jogo[2][0] = "O"
+                } else if ((jogo[0][0] == "X") && (jogo[2][0] == "X") && (jogo[1][0] == "")){
+                    jogo[1][0] = "O"
+                } else if ((jogo[1][0] == "X") && (jogo[2][0] == "X") && (jogo[0][0] == "")){
+                    jogo[0][0] = "O"
+                } else if ((jogo[0][1] == "X") && (jogo[1][1] == "X") && (jogo[2][1] == "")){
+                    jogo[2][1] = "O"
+                } else if ((jogo[0][1] == "X") && (jogo[2][1] == "X") && (jogo[1][1] == "")){
+                    jogo[1][1] = "O"
+                } else if ((jogo[1][1] == "X") && (jogo[2][1] == "X") && (jogo[0][1] == "")){
+                    jogo[0][1] = "O"
+                } else if ((jogo[0][2] == "X") && (jogo[1][2] == "X") && (jogo[2][2] == "")){
+                    jogo[2][2] = "O"
+                } else if ((jogo[0][2] == "X") && (jogo[2][2] == "X") && (jogo[1][2] == "")){
+                    jogo[1][2] = "O"
+                } else if ((jogo[1][2] == "X") && (jogo[2][2] == "X") && (jogo[0][2] == "")){
+                    jogo[0][2] = "O"
+                } else {
+                if(jogada < 8){    
+                    do {
+                        l = Math.round(Math.random()*2)
+                        c = Math.round(Math.random()*2)
+                    } while (jogo[l][c] != "")
+                    jogo[l][c] = "O";
+                } else {
+                    for(var l = 0; l < 3; l++){
+                        for(var c = 0; c < 3; c++){
+                            if(jogo[l][c] == ""){
+                                jogo[l][c] = "O";
+                            }
+                        }
+                    }
+                }
+            }
         }
+    }
         attTabuleiro()
         verifica = verificaVitoria()
         if(verifica != ""){
@@ -109,7 +237,9 @@ async function cpu() {
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms))
         }
+        jogada++
         quemJoga = 0
+        pontuacao()
     }
 }
 
@@ -133,16 +263,9 @@ function verificaVitoria(){
     } else if ((jogo[2][0] == jogo [1][1]) && (jogo[1][1] == jogo[0][2])) {
         return jogo[2][0]
     }
-    
         return ""
-  
-   }
-<<<<<<< HEAD
- 
-=======
 }
-
->>>>>>> cbda6cad2104ef6af682d84553a71e5139d74181
+ 
 function attTabuleiro() {
     for(var l = 0; l < 3; l++){
         for(var c = 0; c < 3; c++){
@@ -161,8 +284,9 @@ function attTabuleiro() {
 }
 
 function iniciar() {
-    partidaIniciada = true
-    turnoCpu = 1
+    partidaIniciada = true;
+    turnoCpu = 1;
+    jogada = 0;
     jogo = [
         ["", "", ""],
         ["", "", ""],
@@ -186,3 +310,15 @@ function iniciar() {
     }
 }
 window.addEventListener("load", iniciar);
+
+
+function pontuacao(){
+    verifica = verificaVitoria()
+    if(verifica == "X"){
+        ptsJogador++
+        document.getElementById("ptsJogador").innerHTML = `${ptsJogador}`
+    } else if (verifica == "O"){
+        ptsCPU++
+        document.getElementById("ptsCPU").innerHTML = `${ptsCPU}`
+    }
+}
