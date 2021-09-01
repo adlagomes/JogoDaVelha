@@ -133,9 +133,9 @@ function verificaVitoria(){
     }
     
         return ""
-
+  
    }
- 
+}
 
 function attTabuleiro() {
     for(var l = 0; l < 3; l++){
