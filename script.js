@@ -1,14 +1,14 @@
 var jogador = "X";
 var jogo = []; // Array que irá guardar e verificar os posições jogadas
-var tabuleiro = [];; // Array que irá controlar/atualizar os elementos visuais
-var quemJoga = 0; // jogador = 0 e cpu = 1
+var tabuleiro = []; // Array que irá controlar/atualizar os elementos visuais
 var verifica;
 var partidaIniciada = true;
 var turnoCpu = 1;
+var quemJoga = 0; // jogador = 0 e cpu = 1
 var quemComeca = 1;
 var nivel = 1;
 
-function turnoJogador(p) {
+async function turnoJogador(p) {
     if((partidaIniciada) && (quemJoga == 0)){
         switch(p) {
             case 1:
@@ -70,16 +70,21 @@ function turnoJogador(p) {
             attTabuleiro()
             verifica = verificaVitoria()
             if(verifica != ""){
-                alert(verifica + " VENCEU!")
                 partidaIniciada = false
+                await sleep (50)
+                alert(verifica + " VENCEU!")
             }
-            cpu()
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms))
+            }
+            cpu();
         }
         
     }
 }
 
-function cpu() {
+async function cpu() {
     if(partidaIniciada == true){
         var l, c
         if(nivel == 1){
@@ -91,14 +96,17 @@ function cpu() {
         } else if(nivel == 2){
             //NIVEL 2
         }
-
+        attTabuleiro()
         verifica = verificaVitoria()
         if(verifica != ""){
-            alert(verifica + " VENCEU!")
             partidaIniciada = false
+            await sleep (50)
+            alert(verifica + " VENCEU!")
         }
 
-        attTabuleiro()
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms))
+        }
         quemJoga = 0
     }
 }
@@ -124,8 +132,9 @@ function verificaVitoria(){
         return jogo[2][0]
     }
     
-    return "" //empate
-
+        return ""
+  
+   }
 }
 
 function attTabuleiro() {
@@ -146,7 +155,7 @@ function attTabuleiro() {
 }
 
 function iniciar() {
-    partidaIniciada == true
+    partidaIniciada = true
     turnoCpu = 1
     jogo = [
         ["", "", ""],
@@ -158,5 +167,16 @@ function iniciar() {
         [document.getElementById("slot4"), document.getElementById("slot5"), document.getElementById("slot6") ],
         [document.getElementById("slot7"), document.getElementById("slot8"), document.getElementById("slot9") ]
     ];
+    attTabuleiro();
+    if(quemComeca == 1){
+        quemComeca = 0;
+        quemJoga = quemComeca;
+        document.getElementById("turno").innerHTML = "Jogador";
+    } else {
+        quemComeca = 1;
+        quemJoga = quemComeca;
+        document.getElementById("turno").innerHTML = "CPU";
+        cpu();
+    }
 }
 window.addEventListener("load", iniciar);
