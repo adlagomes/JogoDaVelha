@@ -1,10 +1,10 @@
 var jogador = "X";
 var jogo = []; // Array que irá guardar e verificar os posições jogadas
-var tabuleiro = [];; // Array que irá controlar/atualizar os elementos visuais
-var quemJoga = 0; // jogador = 0 e cpu = 1
+var tabuleiro = []; // Array que irá controlar/atualizar os elementos visuais
 var verifica;
 var partidaIniciada = true;
 var turnoCpu = 1;
+var quemJoga = 0; // jogador = 0 e cpu = 1
 var quemComeca = 1;
 var nivel = 1;
 
@@ -78,7 +78,7 @@ async function turnoJogador(p) {
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms))
             }
-            cpu()
+            cpu();
         }
         
     }
@@ -155,7 +155,7 @@ function attTabuleiro() {
 }
 
 function iniciar() {
-    partidaIniciada == true
+    partidaIniciada = true
     turnoCpu = 1
     jogo = [
         ["", "", ""],
@@ -167,16 +167,16 @@ function iniciar() {
         [document.getElementById("slot4"), document.getElementById("slot5"), document.getElementById("slot6") ],
         [document.getElementById("slot7"), document.getElementById("slot8"), document.getElementById("slot9") ]
     ];
-    attTabuleiro()
+    attTabuleiro();
     if(quemComeca == 1){
-        quemComeca = 0
-        quemJoga = quemComeca
-        document.getElementById("turno").innerHTML="Jogador"
+        quemComeca = 0;
+        quemJoga = quemComeca;
+        document.getElementById("turno").innerHTML = "Jogador";
     } else {
-        quemComeca = 1
-        quemJoga = quemComeca
-        document.getElementById("turno").innerHTML="CPU"
+        quemComeca = 1;
+        quemJoga = quemComeca;
+        document.getElementById("turno").innerHTML = "CPU";
         cpu();
     }
 }
-window.addEventListener("load", iniciar)
+window.addEventListener("load", iniciar);
