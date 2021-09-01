@@ -135,9 +135,14 @@ function verificaVitoria(){
     }
     
         return ""
-
+  
    }
+<<<<<<< HEAD
  
+=======
+}
+
+>>>>>>> cbda6cad2104ef6af682d84553a71e5139d74181
 function attTabuleiro() {
     for(var l = 0; l < 3; l++){
         for(var c = 0; c < 3; c++){
